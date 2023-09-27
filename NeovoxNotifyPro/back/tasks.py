@@ -5,7 +5,7 @@ import requests
 from celery import app
 from alert.models import Full
 
-@app.task
+@shared_task
 def fetch_and_save_api_data():
     # Здесь выполните запрос к API и сохраните данные в модели APIData
     api_url = 'http://10.254.12.81:9090/api/v1/alerts'
